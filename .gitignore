@@ -1,3 +1,44 @@
+# Ignorar todo por defecto
+*
+
+# Permitir específicamente los archivos del proyecto
+!ADFSpray.py
+!LICENSE
+!README.md
+!requirements.txt
+!.gitignore
+
+# Reglas de exclusión explícitas para archivos de datos y tests (doble seguridad)
+test/
+tests/
+*test*
+users.txt
+usuarios.txt
+*user*
+*pass*
+*.csv
+*.json
+
+# Archivos de Logs y reportes
+*.log
+logs/
+out/
+results/
+*.txt
+
+# Archivos temporales de Python y sistema
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.env
+.DS_Store
+.idea/
+.vscode/
+
+# Permitir de nuevo los archivos de documentación si estuvieran en carpetas
+!README.md
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]

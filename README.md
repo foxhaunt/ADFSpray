@@ -12,7 +12,7 @@ pip3 install -r requirements.txt
 ```
 Run the tool with the needed flags:
 ```
-python3 ADFSpray.py -u [USERNAME] -p [PASSWORD] -t [TARGET URL] [METHOD]
+python3 ADFSpray.py -u [USERNAME] -p [PASSWORD] -t [TARGET URL] [METHOD] -x [PROXY] -V [VERBOSE]
 ```
 
 ## Options to consider
@@ -34,6 +34,23 @@ python3 ADFSpray.py -u [USERNAME] -p [PASSWORD] -t [TARGET URL] [METHOD]
   * throttling time (in seconds) between attempts
 * -r
   * random throttling time between attempts (based on user input for min and max values)
+* -d
+  * (Optional) Domain to prepend to usernames (e.g., -d CONTOSO).
+* -x
+  * (Optional) Proxy URL for interception (e.g., -x http://127.0.0.1:8080).
+
+## Key Enhancements in this Version
+- **Proxy Support (`-x`):** Seamless integration with Burp Suite or other intercepting proxies.
+- **Domain Prepending (`-d`):** Automatically prepends domains (e.g., `DOMAIN\user`) as required by many ADFS configurations.
+- **Stealth Timing (`-r`):** Randomized delays between attempts to evade basic pattern-based detection.
+- **Advanced Logging:** 
+    - Color-coded console output: **Green** for success, **Blue** for failed attempts (in verbose mode).
+    - Persistent Success Log: Successful logins are automatically recorded with timestamps in `[output]_success.log`.
+
+## Output Files
+
+- [output].csv: Structured data for reporting.
+- [output]_success.log: A human-readable log with timestamps of every successful login.
 
 ### Credit
 Inspired by:
